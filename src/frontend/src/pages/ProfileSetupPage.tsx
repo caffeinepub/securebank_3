@@ -78,7 +78,7 @@ export function ProfileSetupPage() {
         className="w-full max-w-lg"
       >
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gold shadow-gold mb-4">
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary shadow-gold mb-4">
             <Landmark className="w-7 h-7 text-primary-foreground" />
           </div>
           <h1 className="text-2xl font-bold text-foreground">
@@ -103,7 +103,7 @@ export function ProfileSetupPage() {
                 value={form.fullName}
                 onChange={(e) => field("fullName", e.target.value)}
                 placeholder="John Doe"
-                className="bg-input border-border text-foreground placeholder:text-muted-foreground focus:border-gold"
+                className="bg-input border-border text-foreground placeholder:text-muted-foreground focus:border-primary"
               />
               {errors.fullName && (
                 <p
@@ -125,7 +125,7 @@ export function ProfileSetupPage() {
                 value={form.email}
                 onChange={(e) => field("email", e.target.value)}
                 placeholder="john@example.com"
-                className="bg-input border-border text-foreground placeholder:text-muted-foreground focus:border-gold"
+                className="bg-input border-border text-foreground placeholder:text-muted-foreground focus:border-primary"
               />
               {errors.email && (
                 <p
@@ -146,7 +146,7 @@ export function ProfileSetupPage() {
                 value={form.phone}
                 onChange={(e) => field("phone", e.target.value)}
                 placeholder="+91 98765 43210"
-                className="bg-input border-border text-foreground placeholder:text-muted-foreground focus:border-gold"
+                className="bg-input border-border text-foreground placeholder:text-muted-foreground focus:border-primary"
               />
               {errors.phone && (
                 <p
@@ -167,7 +167,7 @@ export function ProfileSetupPage() {
                 value={form.address}
                 onChange={(e) => field("address", e.target.value)}
                 placeholder="123 Main St, City, State"
-                className="bg-input border-border text-foreground placeholder:text-muted-foreground focus:border-gold"
+                className="bg-input border-border text-foreground placeholder:text-muted-foreground focus:border-primary"
               />
               {errors.address && (
                 <p
@@ -189,7 +189,7 @@ export function ProfileSetupPage() {
                 value={form.password}
                 onChange={(e) => field("password", e.target.value)}
                 placeholder="Minimum 6 characters"
-                className="bg-input border-border text-foreground placeholder:text-muted-foreground focus:border-gold"
+                className="bg-input border-border text-foreground placeholder:text-muted-foreground focus:border-primary"
               />
               {errors.password && (
                 <p
@@ -211,7 +211,7 @@ export function ProfileSetupPage() {
                 value={form.confirmPassword}
                 onChange={(e) => field("confirmPassword", e.target.value)}
                 placeholder="Re-enter password"
-                className="bg-input border-border text-foreground placeholder:text-muted-foreground focus:border-gold"
+                className="bg-input border-border text-foreground placeholder:text-muted-foreground focus:border-primary"
               />
               {errors.confirmPassword && (
                 <p
@@ -228,7 +228,7 @@ export function ProfileSetupPage() {
             type="submit"
             disabled={saveProfile.isPending}
             data-ocid="setup.submit_button"
-            className="w-full bg-gold text-primary-foreground hover:bg-gold/90 font-semibold h-12 text-base shadow-gold mt-2"
+            className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold h-12 text-base shadow-gold mt-2"
           >
             {saveProfile.isPending ? (
               "Setting up..."

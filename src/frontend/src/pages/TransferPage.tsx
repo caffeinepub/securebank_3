@@ -298,7 +298,7 @@ export function TransferPage({ onSuccess }: TransferPageProps) {
           type="submit"
           disabled={transfer.isPending || success}
           data-ocid="transfer.submit_button"
-          className="w-full bg-gold text-primary-foreground hover:bg-gold/90 font-semibold h-12 text-base shadow-gold"
+          className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold h-12 text-base shadow-gold"
         >
           {transfer.isPending ? (
             "Processing Transfer..."

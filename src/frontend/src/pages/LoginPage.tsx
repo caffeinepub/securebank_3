@@ -10,8 +10,8 @@ export function LoginPage() {
     <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-gold/5 blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-gold/5 blur-3xl" />
+        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-primary/10 blur-3xl" />
       </div>
 
       <motion.div
@@ -22,11 +22,11 @@ export function LoginPage() {
       >
         {/* Logo */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gold shadow-gold mb-4">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary shadow-gold mb-4">
             <Landmark className="w-8 h-8 text-primary-foreground" />
           </div>
           <h1 className="text-3xl font-bold text-foreground">
-            AURA <span className="text-gold">FINANCE</span>
+            AURA <span className="text-primary">FINANCE</span>
           </h1>
           <p className="text-muted-foreground mt-2 text-sm">
             Secure banking at your fingertips
@@ -47,7 +47,7 @@ export function LoginPage() {
             onClick={login}
             disabled={isLoggingIn || isInitializing}
             data-ocid="login.primary_button"
-            className="w-full bg-gold text-primary-foreground hover:bg-gold/90 font-semibold py-3 h-12 text-base shadow-gold transition-all"
+            className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-3 h-12 text-base shadow-gold transition-all"
           >
             {isLoggingIn ? (
               <span className="flex items-center gap-2">
@@ -95,7 +95,7 @@ export function LoginPage() {
             { icon: TrendingUp, label: "Real-time Updates" },
           ].map(({ icon: Icon, label }) => (
             <div key={label} className="glass-card rounded-xl p-3 text-center">
-              <Icon className="w-5 h-5 text-gold mx-auto mb-1" />
+              <Icon className="w-5 h-5 text-primary mx-auto mb-1" />
               <p className="text-[11px] text-muted-foreground">{label}</p>
             </div>
           ))}

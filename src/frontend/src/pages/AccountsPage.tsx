@@ -91,7 +91,7 @@ export function AccountsPage() {
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
             <Button
-              className="bg-gold text-primary-foreground hover:bg-gold/90 shadow-gold"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-gold"
               data-ocid="accounts.create_account.open_modal_button"
             >
               <Plus className="w-4 h-4 mr-2" /> New Account
@@ -127,7 +127,7 @@ export function AccountsPage() {
                       className="text-foreground hover:bg-card"
                     >
                       <div className="flex items-center gap-2">
-                        <CreditCard className="w-4 h-4 text-gold" /> Checking
+                        <CreditCard className="w-4 h-4 text-primary" /> Checking
                         Account
                       </div>
                     </SelectItem>
@@ -136,7 +136,7 @@ export function AccountsPage() {
                       className="text-foreground hover:bg-card"
                     >
                       <div className="flex items-center gap-2">
-                        <PiggyBank className="w-4 h-4 text-gold" /> Savings
+                        <PiggyBank className="w-4 h-4 text-primary" /> Savings
                         Account
                       </div>
                     </SelectItem>
@@ -189,7 +189,7 @@ export function AccountsPage() {
                   Cancel
                 </Button>
                 <Button
-                  className="flex-1 bg-gold text-primary-foreground hover:bg-gold/90"
+                  className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90"
                   onClick={handleCreate}
                   disabled={createAccount.isPending}
                   data-ocid="accounts.create_account.confirm_button"
@@ -225,7 +225,7 @@ export function AccountsPage() {
           </p>
           <Button
             onClick={() => setOpen(true)}
-            className="bg-gold text-primary-foreground hover:bg-gold/90 shadow-gold"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-gold"
             data-ocid="accounts.create_first.button"
           >
             <Plus className="w-4 h-4 mr-2" /> Create First Account
@@ -244,11 +244,11 @@ export function AccountsPage() {
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
                     {account.accountType === AccountType.checking ? (
-                      <CreditCard className="w-5 h-5 text-gold" />
+                      <CreditCard className="w-5 h-5 text-primary" />
                     ) : (
-                      <PiggyBank className="w-5 h-5 text-gold" />
+                      <PiggyBank className="w-5 h-5 text-primary" />
                     )}
                   </div>
                   <div>
@@ -289,7 +289,7 @@ export function AccountsPage() {
                 <button
                   type="button"
                   onClick={() => copyAccountNumber(account.accountNumber)}
-                  className="p-2 text-muted-foreground hover:text-gold transition-colors"
+                  className="p-2 text-muted-foreground hover:text-primary transition-colors"
                   data-ocid={`accounts.copy.button.${i + 1}`}
                 >
                   {copied === account.accountNumber.toString() ? (

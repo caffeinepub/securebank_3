@@ -29,7 +29,7 @@ function AppContent() {
   ) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-4">
-        <div className="w-10 h-10 rounded-full border-2 border-gold border-t-transparent animate-spin" />
+        <div className="w-10 h-10 rounded-full border-2 border-primary border-t-transparent animate-spin" />
         <p className="text-muted-foreground text-sm">Loading your account...</p>
       </div>
     );

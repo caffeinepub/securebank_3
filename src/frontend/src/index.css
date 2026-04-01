@@ -7,43 +7,43 @@
 @layer base {
   :root {
     --radius: 1rem;
-    /* Deep navy dark banking theme */
-    --background: 0.1 0.035 242;
-    --foreground: 0.95 0.012 242;
-    --card: 0.17 0.05 238;
-    --card-foreground: 0.95 0.012 242;
-    --popover: 0.22 0.055 238;
-    --popover-foreground: 0.95 0.012 242;
-    --primary: 0.76 0.12 72;
-    --primary-foreground: 0.12 0.04 242;
-    --secondary: 0.22 0.055 238;
-    --secondary-foreground: 0.95 0.012 242;
-    --muted: 0.22 0.055 238;
-    --muted-foreground: 0.7 0.025 240;
-    --accent: 0.76 0.12 72;
-    --accent-foreground: 0.12 0.04 242;
-    --destructive: 0.64 0.19 24;
-    --destructive-foreground: 0.95 0.012 242;
-    --border: 0.3 0.045 237;
-    --input: 0.22 0.055 238;
-    --ring: 0.76 0.12 72;
-    --chart-1: 0.76 0.12 72;
-    --chart-2: 0.77 0.17 152;
-    --chart-3: 0.64 0.19 24;
-    --chart-4: 0.6 0.15 220;
-    --chart-5: 0.7 0.1 280;
-    --sidebar: 0.12 0.04 242;
-    --sidebar-foreground: 0.95 0.012 242;
-    --sidebar-primary: 0.76 0.12 72;
-    --sidebar-primary-foreground: 0.12 0.04 242;
-    --sidebar-accent: 0.22 0.055 238;
-    --sidebar-accent-foreground: 0.95 0.012 242;
-    --sidebar-border: 0.3 0.045 237;
-    --sidebar-ring: 0.76 0.12 72;
+    /* Pastel light banking theme */
+    --background: 0.97 0.018 280;
+    --foreground: 0.18 0.09 260;
+    --card: 0.98 0.014 300;
+    --card-foreground: 0.18 0.09 260;
+    --popover: 0.99 0.01 280;
+    --popover-foreground: 0.18 0.09 260;
+    --primary: 0.52 0.22 270;
+    --primary-foreground: 0.99 0.005 280;
+    --secondary: 0.93 0.04 320;
+    --secondary-foreground: 0.25 0.12 320;
+    --muted: 0.94 0.025 280;
+    --muted-foreground: 0.45 0.08 270;
+    --accent: 0.93 0.06 160;
+    --accent-foreground: 0.2 0.12 160;
+    --destructive: 0.62 0.22 24;
+    --destructive-foreground: 0.99 0.005 280;
+    --border: 0.88 0.04 280;
+    --input: 0.93 0.025 280;
+    --ring: 0.52 0.22 270;
+    --chart-1: 0.6 0.22 270;
+    --chart-2: 0.65 0.2 155;
+    --chart-3: 0.62 0.22 24;
+    --chart-4: 0.6 0.2 220;
+    --chart-5: 0.65 0.2 340;
+    --sidebar: 0.96 0.025 280;
+    --sidebar-foreground: 0.18 0.09 260;
+    --sidebar-primary: 0.52 0.22 270;
+    --sidebar-primary-foreground: 0.99 0.005 280;
+    --sidebar-accent: 0.93 0.04 320;
+    --sidebar-accent-foreground: 0.25 0.12 320;
+    --sidebar-border: 0.88 0.04 280;
+    --sidebar-ring: 0.52 0.22 270;
     /* Custom tokens */
-    --success: 0.77 0.17 152;
-    --gold: 0.76 0.12 72;
-    --nav-bg: 0.12 0.04 242;
+    --success: 0.55 0.22 155;
+    --gold: 0.6 0.2 50;
+    --nav-bg: 0.97 0.02 280;
   }
 
   * {
@@ -54,14 +54,15 @@
     @apply bg-background text-foreground font-inter;
     background: linear-gradient(
       135deg,
-      oklch(0.1 0.035 242) 0%,
-      oklch(0.13 0.042 238) 100%
+      oklch(0.96 0.03 290) 0%,
+      oklch(0.97 0.025 320) 50%,
+      oklch(0.96 0.03 260) 100%
     );
     min-height: 100vh;
   }
 
   html {
-    color-scheme: dark;
+    color-scheme: light;
   }
 }
 
@@ -70,27 +71,33 @@
     color: oklch(var(--success));
   }
   .text-gold {
-    color: oklch(var(--gold));
+    color: oklch(0.55 0.22 270);
   }
   .bg-gold {
-    background-color: oklch(var(--gold));
+    background-color: oklch(0.55 0.22 270);
   }
   .border-gold {
-    border-color: oklch(var(--gold));
+    border-color: oklch(0.55 0.22 270);
   }
   .bg-nav {
-    background-color: oklch(var(--nav-bg));
+    background-color: oklch(0.98 0.018 285 / 0.95);
   }
   .account-card-gradient {
     background: linear-gradient(
       135deg,
-      oklch(0.17 0.05 238) 0%,
-      oklch(0.22 0.06 235) 100%
+      oklch(0.93 0.05 280) 0%,
+      oklch(0.91 0.07 300) 100%
     );
   }
   .glass-card {
-    background: oklch(0.17 0.05 238 / 0.9);
+    background: oklch(0.99 0.01 280 / 0.85);
     backdrop-filter: blur(12px);
-    border: 1px solid oklch(0.3 0.045 237 / 0.6);
+    border: 1px solid oklch(0.88 0.04 280 / 0.7);
+  }
+  .shadow-gold {
+    box-shadow: 0 4px 24px oklch(0.55 0.22 270 / 0.25);
+  }
+  .shadow-card {
+    box-shadow: 0 4px 32px oklch(0.55 0.22 270 / 0.1);
   }
 }

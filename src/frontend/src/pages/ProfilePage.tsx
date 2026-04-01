@@ -140,8 +140,8 @@ export function ProfilePage() {
 
       {/* Profile Header Card */}
       <div className="glass-card rounded-2xl p-6 shadow-card flex items-center gap-5">
-        <Avatar className="w-16 h-16 border-2 border-gold/30">
-          <AvatarFallback className="bg-card text-gold text-xl font-bold">
+        <Avatar className="w-16 h-16 border-2 border-primary/30">
+          <AvatarFallback className="bg-card text-primary text-xl font-bold">
             {initials}
           </AvatarFallback>
         </Avatar>
@@ -157,8 +157,8 @@ export function ProfilePage() {
       {!showSensitive ? (
         <div className="glass-card rounded-2xl p-6 shadow-card">
           <div className="flex items-center gap-3 mb-5">
-            <div className="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center">
-              <Lock className="w-5 h-5 text-gold" />
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+              <Lock className="w-5 h-5 text-primary" />
             </div>
             <div>
               <h3 className="font-semibold text-foreground">
@@ -181,7 +181,7 @@ export function ProfilePage() {
             />
             <Button
               onClick={handleUnlock}
-              className="w-full bg-gold text-primary-foreground hover:bg-gold/90 shadow-gold"
+              className="w-full bg-primary text-primary-foreground hover:bg-primary/90 shadow-gold"
               data-ocid="profile.unlock.button"
             >
               <Eye className="w-4 h-4 mr-2" /> Unlock Profile
@@ -211,7 +211,7 @@ export function ProfilePage() {
                     size="sm"
                     onClick={handleSave}
                     disabled={saveProfile.isPending}
-                    className="bg-gold text-primary-foreground hover:bg-gold/90 h-8"
+                    className="bg-primary text-primary-foreground hover:bg-primary/90 h-8"
                     data-ocid="profile.save.button"
                   >
                     <Save className="w-3 h-3 mr-1" />
@@ -223,7 +223,7 @@ export function ProfilePage() {
                   size="sm"
                   variant="outline"
                   onClick={() => setEditing(true)}
-                  className="border-border text-muted-foreground hover:border-gold hover:text-gold h-8"
+                  className="border-border text-muted-foreground hover:border-primary hover:text-primary h-8"
                   data-ocid="profile.edit.button"
                 >
                   <Edit2 className="w-3 h-3 mr-1" /> Edit

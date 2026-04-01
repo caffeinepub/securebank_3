@@ -45,11 +45,11 @@ export function Layout({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           {/* Brand */}
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gold flex items-center justify-center shadow-gold">
+            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center shadow-gold">
               <Landmark className="w-4 h-4 text-primary-foreground" />
             </div>
             <span className="text-foreground font-bold text-lg tracking-wide">
-              AURA <span className="text-gold">FINANCE</span>
+              AURA <span className="text-primary">FINANCE</span>
             </span>
           </div>
 
@@ -66,7 +66,7 @@ export function Layout({
                 onClick={() => onNavigate(page)}
                 className={`relative px-4 py-2 text-sm font-medium transition-colors rounded-md ${
                   currentPage === page
-                    ? "text-gold"
+                    ? "text-primary"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
@@ -74,7 +74,7 @@ export function Layout({
                 {currentPage === page && (
                   <motion.div
                     layoutId="nav-indicator"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gold rounded-full"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full"
                   />
                 )}
               </button>
@@ -89,7 +89,7 @@ export function Layout({
               data-ocid="nav.notifications.button"
             >
               <Bell className="w-5 h-5" />
-              <Badge className="absolute -top-0.5 -right-0.5 w-4 h-4 p-0 flex items-center justify-center text-[10px] bg-gold text-primary-foreground border-0">
+              <Badge className="absolute -top-0.5 -right-0.5 w-4 h-4 p-0 flex items-center justify-center text-[10px] bg-primary text-primary-foreground border-0">
                 2
               </Badge>
             </button>
@@ -100,8 +100,8 @@ export function Layout({
               className="hidden md:flex items-center gap-2 hover:opacity-80 transition-opacity"
               data-ocid="nav.profile.button"
             >
-              <Avatar className="w-8 h-8 border border-gold/30">
-                <AvatarFallback className="bg-card text-gold text-xs font-bold">
+              <Avatar className="w-8 h-8 border border-primary/30">
+                <AvatarFallback className="bg-card text-primary text-xs font-bold">
                   {initials}
                 </AvatarFallback>
               </Avatar>
@@ -115,7 +115,7 @@ export function Layout({
               size="sm"
               onClick={onLogout}
               data-ocid="nav.logout.button"
-              className="hidden md:flex border-border text-muted-foreground hover:text-foreground hover:border-gold/50 text-xs"
+              className="hidden md:flex border-border text-muted-foreground hover:text-foreground hover:border-primary/50 text-xs"
             >
               <LogOut className="w-3 h-3 mr-1" />
               Log Out
@@ -156,7 +156,7 @@ export function Layout({
                     }}
                     className={`text-left px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                       currentPage === page
-                        ? "bg-gold/10 text-gold"
+                        ? "bg-primary/10 text-primary"
                         : "text-muted-foreground hover:text-foreground hover:bg-card"
                     }`}
                   >
@@ -186,8 +186,8 @@ export function Layout({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded bg-gold/20 flex items-center justify-center">
-                <Landmark className="w-3 h-3 text-gold" />
+              <div className="w-6 h-6 rounded bg-primary/20 flex items-center justify-center">
+                <Landmark className="w-3 h-3 text-primary" />
               </div>
               <span className="text-sm font-semibold text-foreground">
                 AURA FINANCE
@@ -199,7 +199,7 @@ export function Layout({
                   key={page}
                   type="button"
                   onClick={() => onNavigate(page)}
-                  className="text-xs text-muted-foreground hover:text-gold transition-colors"
+                  className="text-xs text-muted-foreground hover:text-primary transition-colors"
                 >
                   {label}
                 </button>

@@ -48,7 +48,9 @@ export function DashboardPage({ profile, onNavigate }: DashboardPageProps) {
           className="text-4xl font-bold text-foreground"
         >
           Welcome back,{" "}
-          <span className="text-gold">{profile.fullName.split(" ")[0]}!</span>
+          <span className="text-primary">
+            {profile.fullName.split(" ")[0]}!
+          </span>
         </motion.h1>
         <p className="text-muted-foreground mt-1 text-sm">{today}</p>
       </div>
@@ -73,7 +75,7 @@ export function DashboardPage({ profile, onNavigate }: DashboardPageProps) {
               <Button
                 onClick={() => onNavigate("accounts")}
                 size="sm"
-                className="bg-gold text-primary-foreground hover:bg-gold/90"
+                className="bg-primary text-primary-foreground hover:bg-primary/90"
                 data-ocid="dashboard.create_account.button"
               >
                 <Plus className="w-4 h-4 mr-1" /> Create Account
@@ -118,7 +120,7 @@ export function DashboardPage({ profile, onNavigate }: DashboardPageProps) {
           <Button
             onClick={() => onNavigate("accounts")}
             variant="outline"
-            className="w-full border-border text-muted-foreground hover:border-gold hover:text-gold h-12"
+            className="w-full border-border text-muted-foreground hover:border-primary hover:text-primary h-12"
             data-ocid="dashboard.create_account.button"
           >
             <Plus className="w-4 h-4 mr-2" /> Create New Account
@@ -126,7 +128,7 @@ export function DashboardPage({ profile, onNavigate }: DashboardPageProps) {
 
           <Button
             onClick={() => onNavigate("transfer")}
-            className="w-full bg-gold text-primary-foreground hover:bg-gold/90 h-12 font-semibold shadow-gold"
+            className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 font-semibold shadow-gold"
             data-ocid="dashboard.transfer.button"
           >
             Transfer Funds
@@ -143,7 +145,7 @@ export function DashboardPage({ profile, onNavigate }: DashboardPageProps) {
               <button
                 type="button"
                 onClick={() => onNavigate("history")}
-                className="text-gold text-sm hover:text-gold/80 transition-colors flex items-center gap-1"
+                className="text-primary text-sm hover:text-primary/80 transition-colors flex items-center gap-1"
                 data-ocid="dashboard.history.link"
               >
                 View All <ArrowUpRight className="w-3 h-3" />
