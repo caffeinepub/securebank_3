@@ -13,7 +13,7 @@ import {
 import { motion } from "motion/react";
 import { useState } from "react";
 import { toast } from "sonner";
-import { useSaveInitialProfile } from "../hooks/useQueries";
+import { useSaveProfile } from "../hooks/useQueries";
 import { hashPassword } from "../utils/hash";
 
 export function ProfileSetupPage() {
@@ -26,7 +26,7 @@ export function ProfileSetupPage() {
     confirmPassword: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const saveProfile = useSaveInitialProfile();
+  const saveProfile = useSaveProfile();
 
   const validate = () => {
     const e: Record<string, string> = {};
@@ -53,10 +53,13 @@ export function ProfileSetupPage() {
     try {
       const passwordHash = await hashPassword(form.password);
       await saveProfile.mutateAsync({
-        fullName: form.fullName,
-        email: form.email,
-        phone: form.phone,
-        address: `${form.address}||hash:${passwordHash}`,
+        profile: {
+          fullName: form.fullName,
+          email: form.email,
+          phone: form.phone,
+          address: form.address,
+        },
+        passwordHash,
       });
       toast.success("Profile created successfully!");
     } catch {
@@ -142,7 +145,7 @@ export function ProfileSetupPage() {
                 data-ocid="setup.phone.input"
                 value={form.phone}
                 onChange={(e) => field("phone", e.target.value)}
-                placeholder="+1 (555) 000-0000"
+                placeholder="+91 98765 43210"
                 className="bg-input border-border text-foreground placeholder:text-muted-foreground focus:border-gold"
               />
               {errors.phone && (

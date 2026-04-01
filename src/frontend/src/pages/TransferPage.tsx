@@ -59,11 +59,11 @@ export function TransferPage({ onSuccess }: TransferPageProps) {
 
     try {
       const passwordHash = await hashPassword(form.password);
-      const amountInCents = BigInt(Math.round(Number(form.amount) * 100));
+      const amountInPaise = BigInt(Math.round(Number(form.amount) * 100));
       const result = await transfer.mutateAsync({
         fromAccount: BigInt(form.fromAccount),
         toAccount: BigInt(form.toAccount),
-        amount: amountInCents,
+        amount: amountInPaise,
         description: form.description,
         passwordHash,
       });
@@ -221,11 +221,11 @@ export function TransferPage({ onSuccess }: TransferPageProps) {
         {/* Amount */}
         <div>
           <Label className="text-muted-foreground text-sm mb-1.5">
-            Amount (USD)
+            Amount (₹)
           </Label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground font-semibold">
-              $
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground font-semibold text-base">
+              ₹
             </span>
             <Input
               data-ocid="transfer.amount.input"
@@ -235,7 +235,7 @@ export function TransferPage({ onSuccess }: TransferPageProps) {
               value={form.amount}
               onChange={(e) => field("amount", e.target.value)}
               placeholder="0.00"
-              className="bg-input border-border text-foreground placeholder:text-muted-foreground h-12 pl-7"
+              className="bg-input border-border text-foreground placeholder:text-muted-foreground h-12 pl-8"
             />
           </div>
           {errors.amount && (

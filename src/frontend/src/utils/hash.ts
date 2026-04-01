@@ -9,14 +9,15 @@ export async function hashPassword(password: string): Promise<string> {
 
 export function formatCurrency(amount: bigint): string {
   const num = Number(amount) / 100;
-  return new Intl.NumberFormat("en-US", {
+  return new Intl.NumberFormat("en-IN", {
     style: "currency",
-    currency: "USD",
+    currency: "INR",
+    maximumFractionDigits: 2,
   }).format(num);
 }
 
 export function formatDate(timestamp: bigint): string {
-  return new Date(Number(timestamp) / 1_000_000).toLocaleDateString("en-US", {
+  return new Date(Number(timestamp) / 1_000_000).toLocaleDateString("en-IN", {
     year: "numeric",
     month: "short",
     day: "numeric",

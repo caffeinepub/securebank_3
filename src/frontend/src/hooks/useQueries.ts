@@ -80,12 +80,14 @@ export function useCreateAccount() {
     mutationFn: async ({
       accountType,
       label,
+      initialBalance,
     }: {
       accountType: AccountType;
       label: string;
+      initialBalance: bigint;
     }) => {
       if (!actor) throw new Error("Not authenticated");
-      return actor.createBankAccount(accountType, label, 0n);
+      return actor.createBankAccount(accountType, label, initialBalance);
     },
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ["dashboardData"] });

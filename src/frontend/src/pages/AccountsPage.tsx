@@ -32,6 +32,7 @@ export function AccountsPage() {
     AccountType.checking,
   );
   const [newAccLabel, setNewAccLabel] = useState("");
+  const [initialAmount, setInitialAmount] = useState("");
   const [copied, setCopied] = useState<string | null>(null);
 
   const accounts = data?.accounts ?? [];
@@ -41,14 +42,25 @@ export function AccountsPage() {
       toast.error("Please enter an account label");
       return;
     }
+    const parsedAmount = Number.parseFloat(initialAmount);
+    if (initialAmount && (Number.isNaN(parsedAmount) || parsedAmount < 0)) {
+      toast.error("Please enter a valid initial balance");
+      return;
+    }
     try {
+      // Convert rupees to paise (smallest unit, like cents)
+      const initialBalance = initialAmount
+        ? BigInt(Math.round(parsedAmount * 100))
+        : 0n;
       await createAccount.mutateAsync({
         accountType: newAccType,
         label: newAccLabel.trim(),
+        initialBalance,
       });
       toast.success("Account created successfully!");
       setOpen(false);
       setNewAccLabel("");
+      setInitialAmount("");
       setNewAccType(AccountType.checking);
     } catch {
       toast.error("Failed to create account");
@@ -142,6 +154,30 @@ export function AccountsPage() {
                   placeholder="e.g. Personal Savings, Emergency Fund"
                   className="bg-input border-border text-foreground placeholder:text-muted-foreground"
                 />
+              </div>
+              <div>
+                <Label className="text-muted-foreground text-sm mb-1.5">
+                  Opening Balance (₹)
+                </Label>
+                <div className="relative">
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground font-semibold text-base">
+                    ₹
+                  </span>
+                  <Input
+                    data-ocid="accounts.initial_balance.input"
+                    type="number"
+                    step="0.01"
+                    min="0"
+                    value={initialAmount}
+                    onChange={(e) => setInitialAmount(e.target.value)}
+                    placeholder="0.00"
+                    className="bg-input border-border text-foreground placeholder:text-muted-foreground pl-8"
+                  />
+                </div>
+                <p className="text-xs text-muted-foreground mt-1">
+                  Enter the amount you want to deposit when opening this
+                  account.
+                </p>
               </div>
               <div className="flex gap-3 pt-2">
                 <Button
