@@ -206,15 +206,7 @@ export function Layout({
               ))}
             </div>
             <p className="text-xs text-muted-foreground">
-              © {new Date().getFullYear()}.{" "}
-              <a
-                href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(window.location.hostname)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-gold transition-colors"
-              >
-                Built with ❤️ using caffeine.ai
-              </a>
+              © {new Date().getFullYear()} AURA FINANCE. All rights reserved.
             </p>
           </div>
         </div>
